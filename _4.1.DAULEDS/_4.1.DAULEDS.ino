@@ -9,7 +9,7 @@
 
 
 //***************  VARIABLES  **************************************
-int i,b,j,;
+int i,b,j;
 int num = 4;
 int LedPins[]={5,6,7,8};
 int cicle =6;
@@ -27,6 +27,7 @@ for (i = 0; i<num; i++){
 
 for(i = 0; i<cicle; i++){
 b = i+1;
+j = b-i;
   switch (i){
   
   case 1:
@@ -37,7 +38,7 @@ b = i+1;
   delay (1000);}
   break;
   case 2:
-  { j = b-i;
+  { 
   digitalWrite(LedPins[j], HIGH);
   digitalWrite(LedPins[num-j], HIGH);
   delay (1000);
@@ -47,7 +48,7 @@ b = i+1;
   break;
   }
    case 3:
-  { j = b-i;
+  { 
   digitalWrite(LedPins[i-j], HIGH);
   digitalWrite(LedPins[j], HIGH);
   delay (1000);
@@ -57,7 +58,7 @@ b = i+1;
   break;
   }
    case 4:
-  { j = b-i;
+  { 
   digitalWrite(LedPins[num-j], HIGH);
   digitalWrite(LedPins[2*j], HIGH);
   digitalWrite(LedPins[j], HIGH);
