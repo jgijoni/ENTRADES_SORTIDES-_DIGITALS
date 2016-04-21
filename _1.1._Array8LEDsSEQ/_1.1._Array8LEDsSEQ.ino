@@ -8,7 +8,7 @@
 
 
 //********************************  VARIABLES  *******************************************************
-int LEDarray [] ={5,6,7,8,9,10,11,12};  // Declaracio leds com si fossin una array
+int LEDarray [] ={5,6,7,8,9,10,11,12};    // Declaracio leds com  una array
 
 int i;
 
