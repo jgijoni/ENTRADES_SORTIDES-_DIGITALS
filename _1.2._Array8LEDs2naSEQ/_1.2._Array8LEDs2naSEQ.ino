@@ -1,6 +1,6 @@
 /******************************************************************
  **                                                              **       
- **                  4.2. CRUÏLLA DE SEMAFORS                      ** 
+ **     1.2. Array 8LEDS SEQUENCIA 01010101 - 10101010           ** 
  **                                                              ** 
  ******************************************************************/
 
@@ -8,46 +8,45 @@
 
 
 //***************  VARIABLES  **************************************
-int semafor[6] ={7,8,9,10,11,12};
-const int b =4;
-int i, N,j,a;
+int LEDarray [] ={5,6,7,8,9,10,11,12};
+int i,j,s,p ;
+ 
 
 
 //***************  SETUP   ****************************************
 void setup() {
-for (i=0, i<6; i++;){  
-pinMode(semafor[i],OUTPUT);  
-}
-a =0;
+for (i=0; i<8; i++)
+{  
+pinMode(LEDarray [i],OUTPUT);  
 
+}
+
+ 
 
 }
 
 //*************    LOOP   ******************************************
 void loop() {
-  N= a%2;
- if (N ==1){
- j =3;
+
+ for (p=0; p<2; p++) {
+delay (5000);       
+ 
+ if (p!=1){ 
+  j =i+1;
+      for (i=0; i<8; i=i+2) {
+  j =i+1;
+  digitalWrite (LEDarray[j],LOW);  
+  digitalWrite (LEDarray[i], HIGH);
+      }
  }
- else {
-  j =0;
- }
- digitalWrite(semafor[j], HIGH);
- 
- digitalWrite(semafor[3-j], HIGH);
- delay (1000);
- digitalWrite(semafor[3-j], LOW);
- 
- digitalWrite(semafor[5-j], HIGH);
- delay (b *1000);
- 
- digitalWrite(semafor[5-j], LOW);
- digitalWrite(semafor[4-j], HIGH);
- delay (1000);
- digitalWrite(semafor[4-j], LOW);
- 
- 
- a++; 
-  
-  delay (1000);
+else{
+  for (i=0; i<8; i=i+2) {      
+    j =i+1;
+digitalWrite (LEDarray[i],LOW);  
+digitalWrite (LEDarray[j], HIGH);
 }
+ }
+ 
+}
+}
+
